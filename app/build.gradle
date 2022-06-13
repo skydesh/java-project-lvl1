@@ -11,7 +11,7 @@ plugins {
     id 'application'
 }
 
-group = 'io.hexlet'
+group = 'hexlet.code'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -28,7 +28,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'hexlet.code.App'
+    mainClassName = 'hexlet.code.App'
 }
 
 tasks.named('test') {
@@ -38,4 +38,18 @@ tasks.named('test') {
 
 compileJava {
     options.release = 17
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "hexlet.code.App"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+run {
+    standardInput = System.in
 }
