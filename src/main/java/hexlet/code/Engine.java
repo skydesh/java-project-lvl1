@@ -4,29 +4,19 @@ import java.util.Scanner;
 
 public class Engine {
     private static final String MESSAGE_CORRECT = "Correct!";
-    public static final String GREETING = "Welcome to the Brain Games!";
     private static final String CONGRATULATIONS = "Congratulations, ";
     public static final String QUESTION = "Question: ";
-    private static String name;
-    public static String getName() {
-        return name;
-    }
-    public static void greet() {
-        System.out.println(GREETING);
-        Scanner scn = new Scanner(System.in);
-        System.out.print("May I have your name? ");
-        name = scn.next();
-        System.out.println("Hello, " + name + "!");
-    }
-    public static void explainTask(String task) {
-        System.out.println(task);
+    public static final String USER_ANSWER = "Your answer: ";
+    public static final int NUM_OF_ATTEMPTS = 3;
+    public static Scanner scanner() {
+        return new Scanner(System.in);
     }
     public static void errorMessage(String answer, String userAnswer, String name) {
         System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                 + "'" + answer + "'" + ".\n" + "Let's try again, " + name);
     }
     public static String getUserAnswer() {
-        System.out.print("Your answer: ");
+        System.out.print(USER_ANSWER);
         Scanner scn = new Scanner(System.in);
         return scn.nextLine();
     }
@@ -45,4 +35,10 @@ public class Engine {
     public static int random(int range) {
         return (int) (Math.random() * range);
     }
+    public static String greetGetName(String task) {
+        Cli.greet();
+        System.out.println(task);
+        return Cli.getName();
+    }
+    public static void exit() { }
 }

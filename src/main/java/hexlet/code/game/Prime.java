@@ -18,10 +18,8 @@ public class Prime {
 
     public static void game() {
         int count = 0;
-        Engine.greet();
-        String userName = Engine.getName();
-        Engine.explainTask(PRIME_TASK);
-        while (count < 3) {
+        String userName = Engine.greetGetName(PRIME_TASK);
+        while (count < Engine.NUM_OF_ATTEMPTS) {
             String answer = isPrimeNumber(Engine.random(NUMBERS_RANGE)) ? "yes" : "no";
             String userAnswer = Engine.getUserAnswer();
             boolean correct = Engine.checkAnswer(answer, userAnswer, userName);

@@ -16,21 +16,18 @@ public class Progression {
             if (i == skipNum) {
                 System.out.print(" " + UNKNOWN_NUM);
                 numToReturn = startNum;
-                startNum += step;
             } else {
                 System.out.print(" " + startNum);
-                startNum += step;
             }
+            startNum += step;
         }
         System.out.println();
         return numToReturn;
     }
     public static void game() {
         int count = 0;
-        Engine.greet();
-        String userName = Engine.getName();
-        Engine.explainTask(PROGRESSION_TASK);
-        while(count < 3) {
+        String userName = Engine.greetGetName(PROGRESSION_TASK);
+        while (count < Engine.NUM_OF_ATTEMPTS) {
             String answer = Integer.toString(progression());
             String userAnswer = Engine.getUserAnswer();
             boolean correct = Engine.checkAnswer(answer, userAnswer, userName);
