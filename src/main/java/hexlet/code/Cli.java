@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class Cli {
     public static final String GREETING = "Welcome to the Brain Games!";
     private static String name;
+
     public static String getName() {
         return name;
     }
+
     public static void greet() {
         System.out.println(GREETING);
         Scanner scn = Engine.scanner();

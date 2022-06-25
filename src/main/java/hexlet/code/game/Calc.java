@@ -13,6 +13,7 @@ public class Calc {
     public static final int NUM_OF_OPERATIONS = 3;
     private static int a;
     private static int b;
+
     private static int taskExpression(int y, int z, String mathOperator) {
         System.out.println(Engine.QUESTION + y + mathOperator + z);
         return switch (mathOperator) {
@@ -21,6 +22,7 @@ public class Calc {
             default -> y * z;
         };
     }
+
     private static int taskSelector() {
         int expressionNum = (int) (Math.random() * NUM_OF_OPERATIONS);
         return switch (expressionNum) {
@@ -29,6 +31,7 @@ public class Calc {
             default -> taskExpression(a, b, MATH_MULTIPLICATION);
         };
     }
+
     public static void game() {
         int count = 0;
         String userName = Engine.greetGetName(CALC_TASK);

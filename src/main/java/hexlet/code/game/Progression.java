@@ -7,6 +7,7 @@ public class Progression {
     public static final int PROGRESSION_RANGE = 100;
     private static final String UNKNOWN_NUM = "..";
     public static final String PROGRESSION_TASK = "What number is missing in the progression?";
+
     public static int progression() {
         int startNum = Engine.random(PROGRESSION_RANGE);
         int step = Engine.random(PROGRESSION_LENGTH) + 1;
@@ -24,6 +25,7 @@ public class Progression {
         System.out.println();
         return numToReturn;
     }
+
     public static void game() {
         int count = 0;
         String userName = Engine.greetGetName(PROGRESSION_TASK);

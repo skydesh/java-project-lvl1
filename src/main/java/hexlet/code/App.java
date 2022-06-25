@@ -32,12 +32,13 @@ public class App {
         System.out.print("Your choice: ");
         int userChoice = scn.nextInt();
         switch (userChoice) {
+            case GREET -> Cli.greet();
             case EVEN -> Even.game();
             case CALC -> Calc.game();
             case GCD -> Gcd.game();
             case PROGRESSION -> Progression.game();
             case PRIME -> Prime.game();
-            default -> Engine.exit();
+            default -> System.exit(EXIT);
         }
     }
 }
