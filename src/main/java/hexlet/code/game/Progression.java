@@ -13,12 +13,13 @@ public class Progression {
         int step = Engine.random(PROGRESSION_LENGTH) + 1;
         int skipNum = Engine.random(PROGRESSION_LENGTH);
         int numToReturn = 0;
+        System.out.print(Engine.QUESTION);
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             if (i == skipNum) {
-                System.out.print(" " + UNKNOWN_NUM);
+                System.out.print(UNKNOWN_NUM + " ");
                 numToReturn = startNum;
             } else {
-                System.out.print(" " + startNum);
+                System.out.print(startNum + " ");
             }
             startNum += step;
         }

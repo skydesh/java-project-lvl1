@@ -25,8 +25,8 @@ public class Gcd {
         int count = 0;
         String userName = Engine.greetGetName(GCD_TASK);
         while (count < Engine.NUM_OF_ATTEMPTS) {
-            int a = (int) (Math.random() * RANGE_NUMBER);
-            int b = (int) (Math.random() * RANGE_NUMBER);
+            int a = (int) (Math.random() * RANGE_NUMBER + 1);
+            int b = (int) (Math.random() * RANGE_NUMBER + 1);
             taskExpression(a, b);
             String answer = Integer.toString(evalGcd(a, b));
             String userAnswer = Engine.getUserAnswer();
