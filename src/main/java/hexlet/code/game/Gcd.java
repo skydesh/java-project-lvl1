@@ -8,7 +8,7 @@ public class Gcd {
 
     public static int evalGcd(int a, int b) {
         int num = Math.min(a, b);
-        while (!(a % num == 1 && b % num == 1)) {
+        while (!(a % num == 0 && b % num == 0) || num != 1) {
             num--;
         }
         return num;
