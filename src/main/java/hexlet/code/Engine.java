@@ -13,7 +13,7 @@ public class Engine {
     }
     public static void errorMessage(String answer, String userAnswer, String name) {
         System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                + "'" + answer + "'" + ".\n" + "Let's try again, " + name);
+                + "'" + answer + "'" + ".\n" + "Let's try again, " + name + "!");
     }
     public static String getUserAnswer() {
         System.out.print(USER_ANSWER);
