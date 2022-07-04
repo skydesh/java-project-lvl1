@@ -17,25 +17,21 @@ public class Gcd {
         return num;
     }
 
-    public static void taskExpression(int a, int b) {
-        System.out.println(Engine.QUESTION + a + " " + b);
+    public static String taskNumbers(int a, int b) {
+        return a + " " + b;
     }
 
-    public static void game() {
-        int count = 0;
-        String userName = Engine.greetGetName(GCD_TASK);
-        while (count < Engine.NUM_OF_ATTEMPTS) {
+    public static String[][] game() {
+        String[][] gameParam = new String[Engine.NUM_OF_ATTEMPTS][Engine.NUM_OF_PARAM];
+        for (int i = 0; i < Engine.NUM_OF_ATTEMPTS; i++) {
             int a = (int) (Math.random() * RANGE_NUMBER + 1);
             int b = (int) (Math.random() * RANGE_NUMBER + 1);
-            taskExpression(a, b);
-            String answer = Integer.toString(evalGcd(a, b));
-            String userAnswer = Engine.getUserAnswer();
-            boolean correct = Engine.checkAnswer(answer, userAnswer, userName);
-            if (!correct) {
-                return;
-            }
-            count++;
+            gameParam[i] = new String[] {taskNumbers(a, b), Integer.toString(evalGcd(a, b))};
         }
-        Engine.printCongratulations(userName);
+        return gameParam;
+    }
+
+    public static void toGame() {
+        Engine.startGame(GCD_TASK, game());
     }
 }

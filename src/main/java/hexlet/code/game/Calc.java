@@ -14,16 +14,16 @@ public class Calc {
     private static int a;
     private static int b;
 
-    private static int taskExpression(int y, int z, String mathOperator) {
-        System.out.println(Engine.QUESTION + y + mathOperator + z);
+    private static String[] taskExpression(int y, int z, String mathOperator) {
+        String mathExpression = y + mathOperator + z;
         return switch (mathOperator) {
-            case MATH_SUM -> y + z;
-            case MATH_SUBTRACTION -> y - z;
-            default -> y * z;
+            case MATH_SUM -> new String[]{mathExpression, Integer.toString(y + z)};
+            case MATH_SUBTRACTION -> new String[]{mathExpression, Integer.toString(y - z)};
+            default -> new String[]{mathExpression, Integer.toString(y * z)};
         };
     }
 
-    private static int taskSelector() {
+    private static String[] taskSelector() {
         int expressionNum = (int) (Math.random() * NUM_OF_OPERATIONS);
         return switch (expressionNum) {
             case SUM -> taskExpression(a, b, MATH_SUM);
@@ -32,20 +32,17 @@ public class Calc {
         };
     }
 
-    public static void game() {
-        int count = 0;
-        String userName = Engine.greetGetName(CALC_TASK);
-        while (count < Engine.NUM_OF_ATTEMPTS) {
+    public static String[][] game() {
+        String[][] gameParam = new String[Engine.NUM_OF_ATTEMPTS][Engine.NUM_OF_PARAM];
+        for (int i = 0; i < Engine.NUM_OF_ATTEMPTS; i++) {
             a = (int) (Math.random() * RANGE_NUMBER);
             b = (int) (Math.random() * RANGE_NUMBER);
-            String answer = Integer.toString(taskSelector());
-            String userAnswer = Engine.getUserAnswer();
-            boolean correct = Engine.checkAnswer(answer, userAnswer, userName);
-            if (!correct) {
-                return;
-            }
-            count++;
+            gameParam[i] = taskSelector();
         }
-        Engine.printCongratulations(userName);
+        return gameParam;
+    }
+
+    public static void toGame() {
+        Engine.startGame(CALC_TASK, game());
     }
 }
