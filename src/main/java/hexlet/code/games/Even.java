@@ -1,4 +1,4 @@
-package hexlet.code.game;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
 

@@ -1,10 +1,10 @@
-package hexlet.code.game;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
 
 public class Gcd {
-    public static final String GCD_TASK = "Find the greatest common divisor of given numbers.";
-    public static final int RANGE_NUMBER = 100;
+    private static final String GCD_TASK = "Find the greatest common divisor of given numbers.";
+    private static final int RANGE_NUMBER = 100;
 
     public static int evalGcd(int a, int b) {
         int num = Math.min(a, b);

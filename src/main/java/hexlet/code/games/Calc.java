@@ -1,16 +1,16 @@
-package hexlet.code.game;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
 
 public class Calc {
     private static final int SUM = 1;
-    public static final int SUBTRACTION = 2;
-    public static final String MATH_SUM = " + ";
-    public static final String MATH_SUBTRACTION = " - ";
-    public static final String MATH_MULTIPLICATION = " * ";
+    private static final int SUBTRACTION = 2;
+    private static final String MATH_SUM = " + ";
+    private static final String MATH_SUBTRACTION = " - ";
+    private static final String MATH_MULTIPLICATION = " * ";
     private static final String CALC_TASK = "What is the result of the expression?";
-    public static final int RANGE_NUMBER = 11;
-    public static final int NUM_OF_OPERATIONS = 3;
+    private static final int RANGE_NUMBER = 11;
+    private static final int NUM_OF_OPERATIONS = 3;
     private static int a;
     private static int b;
 
