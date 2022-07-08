@@ -3,18 +3,18 @@
 ### CodeClimate status.
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 ### Even.
-![Even image](./resources/even.png)
-![Even image](./resources/no-even.png)
+![Even image](src/main/resources/even.png)
+![Even image](src/main/resources/no-even.png)
 ### Calc.
-![Even image](./resources/calc.png)
-![Even image](./resources/no-calc.png)
+![Even image](src/main/resources/calc.png)
+![Even image](src/main/resources/no-calc.png)
 ### GCD.
-![Even image](./resources/gcd.png)
-![Even image](./resources/no-gcd.png)
+![Even image](src/main/resources/gcd.png)
+![Even image](src/main/resources/no-gcd.png)
 ### Progression.
-![Even image](./resources/prog.png)
-![Even image](./resources/no-prog.png)
+![Even image](src/main/resources/prog.png)
+![Even image](src/main/resources/no-prog.png)
 ### Prime.
-![Even image](./resources/prime.png)
-![Even image](./resources/no-prime.png)
+![Even image](src/main/resources/prime.png)
+![Even image](src/main/resources/no-prime.png)
 
