@@ -12,7 +12,7 @@ public class App {
             "Please enter the game number and press Enter.";
 
     public static void main(String[] args) {
-        Scanner scn = Engine.scanner();
+        Scanner scn = new Scanner(System.in);
         System.out.println(GAME_SELECTOR);
         System.out.print("""
                 1 - Greet
@@ -25,14 +25,13 @@ public class App {
                 """);
         System.out.print("Your choice: ");
         String userChoice = scn.nextLine();
-
         switch (userChoice) {
             case "1" -> Cli.greet();
-            case "2" -> Even.toGame();
-            case "3" -> Calc.toGame();
-            case "4" -> Gcd.toGame();
-            case "5" -> Progression.toGame();
-            case "6" -> Prime.toGame();
+            case "2" -> Even.startGame();
+            case "3" -> Calc.startGame();
+            case "4" -> Gcd.startGame();
+            case "5" -> Progression.startGame();
+            case "6" -> Prime.startGame();
             case "0" -> System.exit(0);
             default -> {
                 System.err.println("'" + userChoice + "' "

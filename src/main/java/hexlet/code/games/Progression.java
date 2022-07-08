@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
     private static final int PROGRESSION_LENGTH = 7;
@@ -9,9 +10,9 @@ public class Progression {
     private static final String PROGRESSION_TASK = "What number is missing in the progression?";
 
     public static String[] progression() {
-        int startNum = Engine.random(PROGRESSION_RANGE);
-        int step = Engine.random(PROGRESSION_LENGTH) + 1;
-        int skipNum = Engine.random(PROGRESSION_LENGTH);
+        int startNum = Utils.random(PROGRESSION_RANGE);
+        int step = Utils.random(PROGRESSION_LENGTH) + 1;
+        int skipNum = Utils.random(PROGRESSION_LENGTH);
         int numToReturn = 0;
         String[] numArray = new String[PROGRESSION_LENGTH];
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
@@ -26,14 +27,15 @@ public class Progression {
         return new String[]{String.join(" ", numArray), Integer.toString(numToReturn)};
     }
 
-    public static String[][] game() {
+    public static String[][] gameParameters() {
         String[][] gameParam = new String[Engine.NUM_OF_ATTEMPTS][Engine.NUM_OF_PARAM];
         for (int i = 0; i < Engine.NUM_OF_ATTEMPTS; i++) {
             gameParam[i] = progression();
         }
         return gameParam;
     }
-    public static void toGame() {
-        Engine.startGame(PROGRESSION_TASK, game());
+
+    public static void startGame() {
+        Engine.game(PROGRESSION_TASK, gameParameters());
     }
 }

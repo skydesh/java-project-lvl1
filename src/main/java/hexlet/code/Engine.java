@@ -15,67 +15,28 @@ public class Engine {
         return new Scanner(System.in);
     }
 
-    public static void errorMessage(String answer, String userAnswer, String name) {
-        System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                + "'" + answer + "'" + ".\n" + "Let's try again, " + name + "!");
-    }
-
-    public static String getUserAnswer() {
-        System.out.print(USER_ANSWER);
-        Scanner scn = new Scanner(System.in);
-        return scn.nextLine();
-    }
-
-    public static boolean checkAnswer(String answer, String userAnswer, String name) {
-        if (userAnswer.equals(answer)) {
-            System.out.println(MESSAGE_CORRECT);
-        } else {
-            errorMessage(answer, userAnswer, name);
-            return false;
-        }
-        return true;
-    }
-
-    public static void printCongratulations(String name) {
-        System.out.println(CONGRATULATIONS + name + "!");
-    }
-
-    public static int random(int range) {
-        return (int) (Math.random() * range);
-    }
-
-    public static void getGameTask(String task) {
-        System.out.println(task);
-    }
-
-    public static String greet() {
+    public static void game(String task, String[][] gameParametersParameters) {
         System.out.println(GREETING);
         System.out.print("May I have your name? ");
-        String name = getName();
-        System.out.println("Hello, " + name + "!");
-        return name;
-    }
-
-    public static void getQuestion(String question) {
-        System.out.println(QUESTION + question);
-    }
-
-    public static String getName() {
         Scanner scn = scanner();
-        return scn.nextLine();
-    }
-
-    public static void startGame(String task, String[][] game) {
-        String name = greet();
-        getGameTask(task);
-        boolean correctAnswer;
+        String name = scn.nextLine();
+        System.out.println("Hello, " + name + "!");
+        System.out.println(task);
+        String answer;
+        String userAnswer;
         for (int i = 0; i < NUM_OF_ATTEMPTS; i++) {
-            getQuestion(game[i][0]);
-            correctAnswer = checkAnswer(game[i][1], getUserAnswer(), name);
-            if (!correctAnswer) {
+            System.out.println(QUESTION + gameParametersParameters[i][0]);
+            answer = gameParametersParameters[i][1];
+            System.out.print(USER_ANSWER);
+            userAnswer = scn.nextLine();
+            if (userAnswer.equals(answer)) {
+                System.out.println(MESSAGE_CORRECT);
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + answer + "'" + ".\n" + "Let's try again, " + name + "!");
                 return;
             }
+            System.out.println(CONGRATULATIONS + name + "!");
         }
-        printCongratulations(name);
     }
 }
