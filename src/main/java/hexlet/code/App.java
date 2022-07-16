@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class App {
     private static final String GAME_SELECTOR =
             "Please enter the game number and press Enter.";
-
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         System.out.println(GAME_SELECTOR);
