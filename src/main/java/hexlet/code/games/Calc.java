@@ -9,7 +9,7 @@ public class Calc {
     private static final int NUM_OF_OPERATIONS = 3;
     private static final String[] MATH_OPERATORS = {" + ", " - ", " * "};
 
-    private static int calculate(int b, int a, String mathOperator) {
+    private static int calculate(int a, int b, String mathOperator) {
         return switch (mathOperator) {
             case " + " -> a + b;
             case " - " -> a - b;
