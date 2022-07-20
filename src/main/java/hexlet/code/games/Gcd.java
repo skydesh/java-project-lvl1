@@ -7,7 +7,6 @@ public class Gcd {
     private static final String GCD_TASK = "Find the greatest common divisor of given numbers.";
     private static final int MAX_RANGE = 100;
     private static final int MIN_RANGE = 1;
-    private static String[][] gameParams;
 
     public static int evalGcd(int a, int b) {
         int num = Math.min(a, b);
@@ -20,21 +19,13 @@ public class Gcd {
         return num;
     }
 
-    public static String taskNumbers(int a, int b) {
-        return a + " " + b;
-    }
-
-    public static void gameParameters() {
-        gameParams = new String[Engine.ROUNDS_NUMBER][Engine.PARAMETERS_NUMBER];
+    public static void startGame() {
+        String[][] gameParams = new String[Engine.ROUNDS_NUMBER][Engine.PARAMETERS_NUMBER];
         for (int i = 0; i < Engine.ROUNDS_NUMBER; i++) {
             int a = Utils.random(MIN_RANGE, MAX_RANGE);
             int b = Utils.random(MIN_RANGE, MAX_RANGE);
-            gameParams[i] = new String[]{taskNumbers(a, b), Integer.toString(evalGcd(a, b))};
+            gameParams[i] = new String[]{String.format("%d %d", a, b), Integer.toString(evalGcd(a, b))};
         }
-    }
-
-    public static void startGame() {
-        gameParameters();
         Engine.game(GCD_TASK, gameParams);
     }
 }
